@@ -1,24 +1,101 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-bg: #e0e0db;
+  --color-brand-bg: #ffffff;
+  --color-brand-bg-dark: #030512;
   --color-brand-accent: #253551;
+  --color-brand-text: #000000;
+  --color-brand-text-dark: #ffffff;
   --font-marcellus: "Marcellus", serif;
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
+  --animate-fade-in: fade-in 1.2s ease-out forwards;
+  --animate-slide-in-right: slide-in-right 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 :root {
-  --background: #e0e0db;
+  --background: #ffffff;
   --foreground: #000000;
   --accent: #253551;
 }
 
 .dark {
-  --background: #000000;
+  --background: #030512;
   --foreground: #ffffff;
+  --accent: #253551;
 }
 
 body {
   background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-marcellus);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+/* Hide scrollbar for social cards */
+.no-scrollbar::-webkit-scrollbar,
+.no-scrollbar *::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.no-scrollbar,
+.no-scrollbar * {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar in iframes and embeds */
+.no-scrollbar iframe,
+.no-scrollbar embed,
+.no-scrollbar object {
+  overflow: hidden !important;
 }
