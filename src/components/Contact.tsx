@@ -82,9 +82,11 @@ export default function Contact() {
                             <label className="absolute -top-6 left-0 text-[10px] uppercase tracking-[0.3em] opacity-60 group-focus-within:opacity-100 transition-opacity">Message</label>
                             <textarea rows={4} placeholder="Your Message" className="w-full bg-transparent border-b border-black/10 dark:border-white/10 py-4 focus:border-brand-accent dark:focus:border-brand-accent outline-none font-sans text-sm transition-all placeholder:opacity-50 resize-none"></textarea>
                         </div>
-                        <button type="submit" className="w-full md:w-auto bg-brand-accent rounded-full text-white px-16 py-5 uppercase tracking-[0.4em] text-xs font-bold hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl">
-                            Send
-                        </button>
+                        <div className="flex md:justify-end">
+                            <button type="submit" className="w-full md:w-auto bg-brand-accent rounded-full text-white px-16 py-5 uppercase tracking-[0.4em] text-xs font-bold hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl">
+                                Send
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>

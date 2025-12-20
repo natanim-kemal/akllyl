@@ -4,33 +4,29 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
 function TikTokEmbed({ videoUrl, name, link, icon }: { videoUrl: string; name: string; link: string; icon: React.ReactNode }) {
-    const containerRef = useRef<HTMLDivElement>(null);
+    const [isMounted, setIsMounted] = useState(false);
+
+    // Extract video ID from URL
+    const videoId = videoUrl.split('/video/')[1]?.split('?')[0] || '';
 
     useEffect(() => {
-        if (containerRef.current) {
-            // Clear any existing content
-            containerRef.current.innerHTML = '';
-
-            // Create and inject the script
-            const script = document.createElement('script');
-            script.src = `https://api.emailwarmup.com/embed/embed-tiktok.js?url=${encodeURIComponent(videoUrl)}`;
-            script.async = true;
-            containerRef.current.appendChild(script);
-        }
-    }, [videoUrl]);
+        setIsMounted(true);
+    }, []);
 
     return (
         <div className="aspect-square bg-black overflow-hidden relative group shadow-lg rounded-2xl no-scrollbar">
-            {/* Embed Container - Interactive */}
-            <div
-                ref={containerRef}
-                className="absolute inset-0 w-full h-full flex items-center justify-center no-scrollbar"
-                style={{
-                    overflow: 'hidden',
-                    scrollbarWidth: 'none',  /* Firefox */
-                    msOverflowStyle: 'none'  /* IE/Edge */
-                }}
-            />
+            {/* TikTok Embed Container */}
+            {isMounted && (
+                <div className="absolute inset-0 w-full h-full flex items-center justify-center no-scrollbar overflow-hidden">
+                    <iframe
+                        src={`https://www.tiktok.com/embed/v2/${videoId}?hideControls=1`}
+                        className="w-full h-full scale-[1.8] origin-center"
+                        style={{ border: 'none' }}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                    />
+                </div>
+            )}
 
             {/* Bottom Label - Links to social */}
             <a
