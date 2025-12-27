@@ -2,14 +2,14 @@ import Image from "next/image";
 
 export default function Hero() {
     return (
-        <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <section id="hero" className="relative min-h-screen lg:min-h-[125vh] flex items-center justify-center overflow-hidden">
             {/* Background Image with Overlay */}
-            <div className="absolute inset-0 z-0">
+            <div className="absolute inset-0 z-0 h-full w-full overflow-hidden">
                 <Image
                     src="/akllyl_hero.png"
                     alt="Akllyl Minimalist Photography Studio"
                     fill
-                    className="object-cover blur-[2px] scale-105"
+                    className="object-cover blur-[2px]"
                     priority
                     suppressHydrationWarning
                 />

@@ -35,7 +35,7 @@ export default function Navbar() {
 
     return (
         <nav
-            className={`fixed top-0 w-full z-50 px-6 md:px-12 py-6 flex justify-between items-center transition-all duration-500 text-white ${isScrolled
+            className={`fixed top-0 w-full md:w-[90%] md:max-w-6xl left-1/2 -translate-x-1/2 z-50 px-6 md:px-12 py-6 flex justify-between items-center transition-all duration-500 text-white rounded-b-2xl md:rounded-full md:mt-4 ${isScrolled
                 ? "bg-black/80 backdrop-blur-md py-4 shadow-sm"
                 : "bg-transparent"
                 }`}
@@ -82,7 +82,7 @@ export default function Navbar() {
 
             {/* Mobile Menu Overlay */}
             <div
-                className={`fixed inset-0 bg-brand-bg dark:bg-black z-40 flex flex-col items-center justify-center gap-10 transition-transform duration-500 overflow-hidden ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+                className={`fixed inset-0 bg-brand-bg dark:bg-black z-40 flex flex-col items-center justify-center gap-10 transition-transform duration-500 overflow-hidden md:hidden ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
                     }`}
             >
                 {navLinks.map((link) => (
