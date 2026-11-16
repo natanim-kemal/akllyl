@@ -6,7 +6,7 @@ export default function Hero() {
             {/* Background Image with Overlay */}
             <div className="absolute inset-0 z-0 h-full w-full overflow-hidden">
                 <Image
-                    src="/akllyl_hero.png"
+                    src="/akllyl_hero.webp"
                     alt="Akllyl Minimalist Photography Studio"
                     fill
                     className="object-cover blur-[2px]"

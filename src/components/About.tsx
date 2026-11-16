@@ -7,7 +7,7 @@ export default function About() {
                 {/* Image Column */}
                 <div className="relative aspect-[4/5] bg-zinc-200 shadow-2xl overflow-hidden rounded-2xl animate-fade-in group">
                     <Image
-                        src="/about.png"
+                        src="/about.webp"
                         alt="Minimalist Desert Landscape Photography"
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-700"
