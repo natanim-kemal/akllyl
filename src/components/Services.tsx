@@ -11,17 +11,17 @@ export default function Services() {
         {
             title: "Standard Package",
             description: "Essential newborn photography for capturing the basics.",
-            images: ["/standard-1.png", "/standard-2.png"]
+            images: ["/standard-1.webp", "/standard-2.webp"]
         },
         {
             title: "Premium Package",
             description: "Extensive session with multiple setups and detailed editing.",
-            images: ["/premium-1.png", "/premium-2.png"]
+            images: ["/premium-1.webp", "/premium-2.webp"]
         },
         {
             title: "Family Session",
             description: "Full family portraits including the newborn and parents.",
-            images: ["/family-1.png", "/family-2.png"]
+            images: ["/family-1.webp", "/family-2.webp"]
         }
     ];
 
