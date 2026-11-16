@@ -34,12 +34,13 @@ export default function Navbar() {
     ];
 
     return (
-        <nav
-            className={`fixed top-0 w-full md:w-[90%] md:max-w-6xl left-1/2 -translate-x-1/2 z-50 px-6 md:px-12 py-6 flex justify-between items-center transition-all duration-500 text-white rounded-b-2xl md:rounded-full md:mt-4 ${isScrolled
-                ? "bg-black/80 backdrop-blur-md py-4 shadow-sm"
-                : "bg-transparent"
-                }`}
-        >
+        <>
+            <nav
+                className={`fixed top-0 w-full md:w-[90%] md:max-w-6xl left-1/2 -translate-x-1/2 z-50 px-6 md:px-12 py-6 flex justify-between items-center transition-all duration-500 text-white rounded-b-2xl md:rounded-full md:mt-4 ${isScrolled || isMobileMenuOpen
+                    ? "bg-black/80 backdrop-blur-md py-4 shadow-sm"
+                    : "bg-transparent"
+                    }`}
+            >
             <div className="flex items-center gap-2 md:gap-4 lg:ml-8 lg:scale-110 origin-left transition-all duration-300">
                 <Image
                     src="/favicon.svg"
@@ -79,8 +80,9 @@ export default function Navbar() {
                 <div className={`w-5 h-0.5 bg-current transition-all ${isMobileMenuOpen ? "opacity-0" : ""}`} />
                 <div className={`w-5 h-0.5 bg-current transition-all ${isMobileMenuOpen ? "-rotate-45 -translate-y-1.5" : ""}`} />
             </button>
+            </nav>
 
-            {/* Mobile Menu Overlay */}
+            {/* Mobile Menu Overlay — outside <nav>: the nav's translate makes it the containing block for fixed children */}
             <div
                 className={`fixed inset-0 bg-brand-bg dark:bg-black z-40 flex flex-col items-center justify-center gap-10 transition-transform duration-500 overflow-hidden md:hidden ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
                     }`}
@@ -103,6 +105,6 @@ export default function Navbar() {
                     Contact Us
                 </a>
             </div>
-        </nav>
+        </>
     );
 }
