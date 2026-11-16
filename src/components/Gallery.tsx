@@ -88,7 +88,7 @@ export default function Gallery() {
         },
         {
             name: "Studio",
-            image: "/preview.png",
+            image: "/preview.webp",
             link: "https://maps.app.goo.gl/7h9w8SW4NRmbJqvc9",
             isImage: true,
             icon: (
